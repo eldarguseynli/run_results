@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block start_protocol_definition %}<u>Стартовый протокол</u>{% endblock %}
+{% block content %}
+
+{%for name, competition in comps_with_names%}	
+	<li>{{name}}
+	<ul>	
+		{%for number, round, heat in competition%}
+				<a href="/start_list/{{number}}/{{round}}/{{heat}}"><li>Круг {{round}} Забег {{heat}}</li></a>
+		{%endfor%}
+	</ul>
+	</li>
+{% endfor %}
+{%endblock%}
+	
+	

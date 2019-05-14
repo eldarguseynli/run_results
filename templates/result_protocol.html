@@ -1,0 +1,22 @@
+{% extends "result_list.html" %}
+{% block content %}
+<h4>{{competition_code.2}}, круг {{competition_code.1}}, забег {{competition_code.0}}</h4>
+<table>
+	<tr>
+		<th>Номер</th>
+		<th>Дорожка</th>
+		<th>ФИО</th>
+		<th>Организация</th>
+		<th>Результат</th>
+	</tr>
+	{%for number, lane, name, affiliation, result in participants%} 
+	<tr>
+		<td>{{number}}</td>
+		<td>{{lane}}</td>
+		<td>{{name}}</td>
+		<td>{{affiliation}}</td>
+		<td>{{result}}</td>
+	</tr>
+	{%endfor%}
+</table>
+{%endblock%}
