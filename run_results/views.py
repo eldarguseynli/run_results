@@ -31,7 +31,8 @@ def start_protocol(request, number, round, heat):
 		rx = number + ',' + round + ',' + heat + ',' + r'.*(((.|\n)(?!\n\d))*,?)'
 		if content[0].isdigit(): simularities =  re.search(rx, content)
 		else: simularities = re.search('\n' + rx, content)
-		if not simularities: return render(request, 'nonexistent_protocol.html', {'path' : str(utils.path_competition_data()), 'number': number, 'round': round, 'heat': heat })
+		if not simularities: return render(request, 'nonexistent_protocol.html',
+									 	  {'path' : str(utils.path_competition_data()), 'number': number, 'round': round, 'heat': heat })
 		participant = re.findall(r'\n[,	 ](\d+),(\d+),([^,]*),([^,]*),([^,]*),', simularities.group(1))
 		competition_code = re.search(r'\d+,([^,]+),([^,]+),([^,]*)', simularities.group(0)).groups()
 
@@ -65,8 +66,8 @@ def result_protocol(request, number, round, heat):
 				participants = re.findall(r'\n(\d+),([^,]*),[^,]*,([^,]*),([^,]*),([^,]*),([^,]*)', content)
 				
 				participants = [(tup[0], tup[1], tup[2] + ' ' + tup[3], tup[4], tup[5]) for tup in participants]
-				print(participants)
-				return render(request, 'result_protocol.html', {'participants': participants, 'competition_code' : competition_code[1:4]} )
+				return render(request, 'result_protocol.html',
+							 {'participants': participants, 'competition_code' : competition_code[1:4]} )
 
 
 

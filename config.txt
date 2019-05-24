@@ -1,6 +1,6 @@
-This is config file which allow you to change path to the data of competitions.
+This is config file which allowes you to change path to the data of competitions.
 You can define the path which is relative to the path of project folder.
-Remember: relative path does not stats from '\',
+Remember: relative path does not start from '\',
 if you want to keep data in folder \run_results\competition_data set True in the field 'default_path_of_competition_data',
 if programm will not find specified folder it will use default path. 
 
