@@ -53,6 +53,5 @@ def compose_comp_data(heats): #takes list of tuples which consist of 4 elements:
 	competitions.append(list(competition))
 	names_of_competitions.append(heats[len(heats) - 1][3])
 
-	comps_with_names = zip(names_of_competitions, competitions)
-
+	comps_with_names = tuple(zip(names_of_competitions, competitions))
 	return comps_with_names

@@ -4,14 +4,18 @@
 {% block content %}
 
 {%for name, competition in comps_with_names%}	
-	<li>{{name}}
-	<ul>	
+	
+	<ul class="list-group margin-list">
+		<li class="list-group-item">{{name}}</li>
 		{%for number, round, heat in competition%}
-				<a href="/start_list/{{number}}/{{round}}/{{heat}}"><li>Круг {{round}} Забег {{heat}}</li></a>
+				<a href="/start_list/{{number}}/{{round}}/{{heat}}">
+					<li class="list-group-item last-list-element-margin">
+							Круг {{round}} Забег {{heat}}
+					</li>
+				</a>
 		{%endfor%}
 	</ul>
-	</li>
 {% endfor %}
-{%endblock%}
-	
+
+{%endblock%}last-list-element-margin
 	

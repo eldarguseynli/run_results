@@ -7,6 +7,13 @@
     <style type="text/css">
         .main-content{
             margin-top: 14px;
+            margin-bottom: 38px;
+        }
+        .margin-table{
+            margin-top: 21px;
+        }
+        .margin-list{
+            margin-top: 24px;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -15,10 +22,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/start_list/">{% block start_protocol_definition %}Стартовые протоколы{% endblock %}</a> 
     </nav>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-dark"">
         <a class="navbar-brand" href="/result_list/">{% block result_protocol_definition %}Результаты{% endblock %}</a> 
     </nav>
     <div class="container-fluid main-content">

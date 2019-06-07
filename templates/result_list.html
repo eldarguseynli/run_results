@@ -1,14 +1,13 @@
 {% extends "index.html" %}
 {% block result_protocol_definition %}<u>Результаты</u>{% endblock %}
 {% block content %}
-{%for name, competition in comps_with_names%}	
-	<li>{{name}}
-	<ul>	
+{%for name, competition in comps_with_names%}
+	<ul class ="list-group margin-list">
+		<li class="list-group-item">{{name}}</li>
 		{%for number, round, heat in competition%}
-				<a href="/result_list/{{number}}/{{round}}/{{heat}}"><li>Круг {{round}} Забег {{heat}}</li></a>
+				<li class="list-group-item"><a href="/result_list/round_results/{{number}}/{{round}}">Круг {{round}}</a><a href="/result_list/{{number}}/{{round}}/{{heat}}"> Забег {{heat}}</a></li>
 		{%endfor%}
 	</ul>
-	</li>
 {% endfor %}
 {%endblock%}
 	

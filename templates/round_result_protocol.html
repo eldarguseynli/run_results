@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% block result_protocol_definition %}<u>Результаты</u>{% endblock %}
+{% block content %}
+
+<h5>{{competition_name}}, круг {{round}}</h5>
+<table class="table margin-table">
+	<tr>
+		<th>Место</th>
+		<th>ФИО</th>
+		<th>Организация</th>
+		<th>Результат</th>
+	</tr>
+	{%for participants in ordered_real_participants%} 
+		{%for name, affiliation, result in participants%}
+		</tr>
+			{%if forloop.first%}
+				<td>{{forloop.parentloop.counter}}</td>
+			{% else %}
+				<td></td>
+			{%endif%}
+			<td>{{name}}</td>
+			<td>{{affiliation}}</td>
+			<td>{{result}}</td>
+		</tr>
+		{% endfor %}
+	{%endfor%}
+	{%for name, affiliation in fs_participants%} 
+	<tr>
+		<td>ФС</td>
+		<td>{{name}}</td>
+		<td>{{affiliation}}</td>
+		<td></td>
+	</tr>
+	{% endfor %}
+	{%for name, affiliation in nt_participants%} 
+	<tr>
+		<td>НС</td>
+		<td>{{name}}</td>
+		<td>{{affiliation}}</td>
+		<td></td>
+	</tr>
+	{% endfor %}
+	{%for name, affiliation in na_participants%} 
+	<tr>
+		<td>НФ</td>
+		<td>{{name}}</td>
+		<td>{{affiliation}}</td>
+		<td></td>
+	</tr>
+	{% endfor %}
+{%endblock%}
